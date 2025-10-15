@@ -1,6 +1,5 @@
 name: "New Task / Todo"
 description: Create a new task or todo to track on the Kanban board
-title: ""
 labels: ["task"]
 assignees: []
 
