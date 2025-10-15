@@ -1,104 +1,29 @@
-# **Political Language Processing**
+# **PoLaPro: Political Language Processing**
 
 
-### **Political Language Processing**
-In our project “Political Language Processing”, we analyze political speeches in the German Bundestag using Natural Language Processing. The aim is to gain insights into the dynamics and structure of political communication. Our motivation is to reveal and critically question hidden patterns and relationships in political discourse.
+Our project aims to create a **Retrieval-Augmented Generation (RAG)** system that allows users to access structured and contextualized political knowledge about Germany through a conversational AI interface. The idea is to combine large language models with curated political text data from various sources — such as party programs, parliamentary speeches, and governmental press releases — to make political information transparent, interactive, and easily understandable.
 
-The scenario focuses on a comprehensive analysis of the plenary protocols of the German Bundestag. As a hypothetical client, we consider, for example, political research institutes, media houses, or parties that are interested in detailed analyses and comprehensible visualizations of political communication.
+Our **motivation** stems from the observation that political data in Germany is publicly available but highly fragmented and often difficult to navigate. Citizens, students, and journalists frequently need to search through long documents or datasets to find relevant facts or statements. We want to simplify this process by offering a system that can retrieve, interpret, and summarize political content on demand.
 
-Specifically, we aim to answer the following questions:
-* Which party speaks how much, and how fair is the allocation of speaking time?
-* Is it possible to automatically identify the party affiliation or even the identity of a speaker based solely on the speech transcript?
-* Which main topics dominate the political discourse, and how do the parties differ in this regard?
+A **potential user scenario** could be a civic education organization or a news outlet that integrates our chatbot to enable users to ask questions like “What was the position of the Green Party on nuclear energy in 2023?” or “How did the Bundestag debate evolve on migration policies?” Our system would retrieve relevant sources, cite them, and provide a concise, factual response.
 
 
+### **The main questions we want to explore include:**
+
+* How can heterogeneous political text data be unified and structured efficiently?
+* How can we ensure factual correctness and transparency when using LLMs for political topics?
+* What are the best retrieval and ranking strategies for political knowledge bases?
 
 
+### **Data**
 
-
-
-## **Motivation / Szenario**
-* Worum geht es in Ihrem Projekt?
-* Was ist Ihre Motivation?
-* Welches Szenario wollen Sie betrachten?
-* Gibt es vielleicht sogar einen hypothetischen Kunden, für den Ihr Anwendungsfall relevant wäre?
-* Welche Fragestellungen würden Sie gern beantworten?
-
-### **Political Language Processing**
-In unserem Projekt „Political Language Processing“ untersuchen wir politische Reden im Deutschen Bundestag mittels Natural Language Processing. Ziel ist es, Einblicke in die Dynamik und Struktur der politischen Kommunikation zu gewinnen. Unsere Motivation besteht darin, verborgene Muster und Zusammenhänge im politischen Diskurs sichtbar zu machen und kritisch zu hinterfragen.
-Das Szenario konzentriert sich auf eine umfassende Analyse der Plenarprotokolle des Deutschen Bundestages. Als hypothetischen Kunden betrachten wir beispielsweise politische Forschungsinstitute, Medienhäuser oder Parteien, die an detaillierten Analysen und verständlichen Visualisierungen politischer Kommunikation interessiert sind.
-Konkret möchten wir folgende Fragestellungen beantworten:
-* Welche Partei spricht wie viel und wie gerecht ist die Redezeit verteilt?
-* Lässt sich die Parteizugehörigkeit oder sogar die Identität einer Rednerin oder eines Redners automatisch anhand des Rede-Transkripts erkennen?
-* Welche Hauptthemen dominieren im politischen Diskurs und wie unterscheiden sich die Parteien darin?
-
-
-
-## **Daten**
-* Welche Daten wollen Sie für Ihr Projekt verwenden?
-* Bitte angeben, ob Sie frei verfügbare Daten verwenden (wenn ja, Link(s) angeben) oder selbst crawlen wollen (dann URL(s) angeben). Falls selber crawlen, vorher checken, ob robots.txt und "Terms of Use" das erlauben.
-
-
-### **Als Datengrundlage nutzen wir die frei verfügbaren Plenarprotokolle der 19. und 20. Legislaturperiode des Deutschen Bundestags:**
-- Zunächst alle Plenarprotokolle in JSON Form über die API des Deutschen Bundestags Crawlen: https://www.bundestag.de/services/opendata
-- Vor dem Crawlen prüfen wir die Nutzungsbedingungen sowie die robots.txt der Website auf Zulässigkeit des Datenabrufs
-- Dann die gecrawlten Protokolle von ihrer Rohform in ein verarbeitbares Format transformieren
-
-### **Als Fallback-Option, falls das Crawlen nicht klappt, planen wir einen bereits vorverarbeiteten Datensatz der Bundestags-Mine zu verwenden:**
-- Grundlage dieses Datensatzes sind Plenarprotokolle von Sitzungen des 19. Bundestages
-- Daten sind hier in JSON-Dateien gekapselt und beinhalten neben den Reden auch die Ergebnisse einer Named-Entity-Recognition und einer Sentiment-Analyse (diese verwenden wir nicht)
-- Bundestags-Mine Datensatz: https://bundestag-mine.de/
-
-
-
-## **Vorgehen**
-- Sofern Sie schon Ideen dazu haben:
-  * Wie wollen Sie vorgehen?
-  * Welche statistischen Analysen können Sie sich vorstellen durchführen, um erste interessante Informationen und Zusammenhänge zu finden?
-  * Was für ML-Modelle wollen Sie trainieren?
-
-
-### **Datenbeschaffung und Vorbereitung:**
-- Crawling der Plenarprotokolle über die API
-- Transformation der Daten in ein geeignetes Analyseformat (JSON → tabellarische Form)
-
-### **Statistik Task: Verteilungsanalyse der Sprechzeiten – Wer redet wie viel?**
-- Lösungsansatz: rein statistische Auswertung der Redezeiten mittels Wort- und Zeichen-Anzahlen in den Reden
-- Visualisierung bspw. mit Boxplots, Verteilungen oder Heatmaps
-- Idee: Muster und Unterschiede in Redezeit zwischen den Parteien erkennen
-- Idee: Gerechtigkeit der Verteilung der Redezeit zwischen den Geschlechtern auswerten
-- Idee von Prof. Albrecht: Einwürfe und Kommentare vergleichen (wer macht die meisten, wer bekommt die meisten, wer bekommt den meisten Beifall, wer bekommt den wenigsten Beifall)
-
-### **ML-Task 1: Automatische Erkennung der Parteizugehörigkeit der Rednerin oder des Redners in transkribierten Reden**
-
-(Klassifikation, supervised learning)
-
-- Lösungsansatz: Aufbau eines Klassifikationsmodells (bspw. SVM oder BERT-Modell) zur automatischen Klassifikation der Parteizugehörigkeit
-- Extra: Identifikation der Redner:innen mit dem größten Redeanteil mittels eines weiteren Klassifikationsmodells im Pipelineprinzip
-- Evaluierung: Präzision und Recall der Klassifikationsergebnisse (automatisierte Evaluierung)
-- Idee: Similarity Analyse aufbauen, um Vermutungen über selbe Rede-Autor:innen anstellen zu können
-
-
-### **ML-Task 2: Untersuchung der Hauptthemen, die in den Bundestags-Reden diskutiert werden**
-
-(inhaltliche Analyse, unsupervised learning)
-
-- Lösungsansatz: Verwendung von Topic-Modeling-Algorithmen (z.B. LDA oder NMF) zur Identifizierung von Themenclustern in den Reden
-- Idee: parteispezifischer Vergleich: parteilich getrennte Themencluster vergleichen, um Unterschiede in den Kommunikationsstrategien zu den übergeordneten Themen darzustellen
-- Vorschlag von Prof. Albrecht: Untersuchung, wie Begriffe bei den Parteien interpretiert werden (bspw. welche Begriffe verschiedene Parteien, für Migration, Umwelt, Energie … häufig verwendet werden) -> Umsetzung hier noch unklar!
-- Evaluierung: Bewertung der Kohärenz und qualitative Beurteilung der Unterscheidbarkeit der gefundenen Themen
-- Idee: Reden dann rückwirkend den erkannten Themen zuweisen
-- Idee: Topic-Cluster der Parteien mit den allgemeinen Clustern vergleichen, um Fokus der Parteien abzubilden
-
-
-
-## **Fragen**
-Was haben Sie noch für offene Fragen, die Sie mit uns Dozenten klären möchten?
-
-
-
-
-
+We plan to collect textual political data from freely available public sources, including:
+* Bundestag Plenary Protocols (official transcripts of parliamentary sessions): https://www.bundestag.de/protokolle
+* Party Programs and Manifestos (e.g., from official party websites or archives like https://www.wahlprogramme.de
+* Government Press Releases from https://www.bundesregierung.de
+* News and fact databases (e.g., open government datasets or open data portals)
+We will first verify compliance with robots.txt and Terms of Use before crawling or downloading any data.
+All data will be stored in a structured format and automatically kept up to date to support semantic search and retrieval within the RAG system.
 
 
 ### **Team:**
@@ -111,17 +36,54 @@ Was haben Sie noch für offene Fragen, die Sie mit uns Dozenten klären möchten
 ---
 
 
-## **data**
+## **Predecessor project**
+In the preceding project, we (different team) analyzed political speeches in the German Bundestag using Natural Language Processing to gain insights into the dynamics and structure of political communication. Our motivation was to reveal and critically question hidden patterns and relationships in political discourse.
 
-### **For our project, the data was fetched from the open data service provided by the Bundestag:**
-- The data from the 19th electural term could simply be downloaded using the API.
-- Note: For the 20th period, a small number of protocols were missing.
-- For downloading, an API client was created and used, it is checked in under the bundestagsapi folder. However since the data only ahas to be downloaded once, this is not included in any notebook and just kept for reference.
+The scenario focused on a comprehensive analysis of the plenary protocols of the German Bundestag. As a hypothetical client, we considered, for example, political research institutes, media houses, or parties that are interested in detailed analyses and comprehensible visualizations of political communication.
+
+Specifically, we aimed to answer the following questions:
+* Which party speaks how much, and how fair is the allocation of speaking time?
+* Is it possible to automatically identify the party affiliation or even the identity of a speaker based solely on the speech transcript?
+* Which main topics dominate the political discourse, and how do the parties differ in this regard?
+
+### **Data Acquisition and Preparation:**
+- Crawling all publicly available plenary transcripts of the 19th and 20th legislative periods of the German Bundestag in JSON format via the Bundestag’s official API: https://www.bundestag.de/services/opendata
+- Before crawling, verify the website’s Terms of Use and robots.txt to ensure the data retrieval is permitted
+- Note: For the 20th period, a small number of protocols are missing.
+- For downloading, an API client was created and used, it is checked in under the bundestagsapi folder. However since the data only has to be downloaded once, this is not included in any notebook and just kept for reference.
 - After crawling, the data was stored in a Pandas dataframe, preprocessed through several stages, and stored in Pickle (*.pkl) files. Below is a OneDrive link, containing the raw data and the preprocessing stages:
 [Onedrive Link](https://technischehochschulen-my.sharepoint.com/:f:/g/personal/dreykornju96245_technischehochschulen_onmicrosoft_com/Ej-sEGwae81FhV8L48I0PbEB2m3WW8Pu_nWlVdClo0ceBg?e=QhDzuj)
 
+### **Analysis of Speaking Time Distribution – Who Speaks How Much?**
+- Approach: purely statistical evaluation of speaking times using word and character counts in speeches  
+- Visualization, e.g., using boxplots, distributions, or heatmaps  
+- Idea: identify patterns and differences in speaking time between political parties  
+- Idea: evaluate fairness in speaking time distribution between genders  
+- Idea: compare interjections and comments (who makes the most, who receives the most, who receives the most applause, who receives the least applause)  
+- See the corresponding notebook: [statistics](./ST-Task/statisticTask.ipynb)
 
-## **Project Structure Overview:**
+
+### **Automatic Detection of the Speaker’s Party Affiliation in Transcribed Speeches**
+
+- Approach: build a classification model (e.g., SVM or BERT model) to automatically classify party affiliation
+- Extra: identify speakers with the largest speaking share using an additional classification model in a pipeline structure
+- Evaluation: precision and recall of the classification results (automated evaluation)
+- Idea: perform similarity analysis to infer potential speech authorship overlaps
+- See the corresponding notebook: [classification](./ML-Task-1_Classification/ML-Task-1_Classification.ipynb)
+
+
+### **Investigation of the Main Topics Discussed in Bundestag Speeches**
+
+- Approach: use topic modeling algorithms (e.g., LDA or NMF) to identify thematic clusters in the speeches  
+- Idea: party-specific comparison — compare topic clusters across parties to reveal differences in communication strategies regarding overarching topics  
+- Suggestion from Prof. Albrecht: analyze how parties interpret and use certain terms (e.g., which terms related to migration, environment, or energy are used most frequently by different parties) → implementation still to be defined  
+- Evaluation: assess topic coherence and qualitatively evaluate the distinguishability of the identified themes  
+- Idea: retrospectively assign speeches to the identified topics  
+- Idea: compare party-specific topic clusters with general clusters to illustrate each party’s focus 
+- See the corresponding notebook: [topic modeling notebook](./ML-Task-2_Topic-Modeling/TopicModeling_LDA_NMF.ipynb)
+
+
+### **Predecessor Project Structure Overview:**
 
 ```
 data/
@@ -191,22 +153,69 @@ team-16/
 └── pitch_slides.pdf
 ```
 
+
 ---
 
 
+## **Codeguidelines**
+- Comments, documentation, and filepaths are to be written in english!
 
-### **Statistical analysis of German Parliamentary Speeches**
-See the [Statistic Task](./ST-Task/statisticTask.ipynb)
+- Always comment functions (or larger sections or significant files) according to the following principle:
+  ```
+  """
+  description.
+  :dependencies: <filename>: description
+  :param: <parameter_name> (<parameter_data_type>): dascription.
+  :return: <parameter_name> (<parameter_data_type>): dascription.
+  :raises: <error_name>: description.
+  """
+  ```
+  
+- If your code reads data from the project directory, always specify the path to this data in the project directory as follows:
+  ```
+  ### **Input:**
+  drectory/
+  ├── directory/
+  │   └── filename.filetype
+  ...
+  ```
+
+- If your code writes data to the project directory, always specify the path to this data in the project directory as follows:
+  ```
+  ### **Output:**
+  drectory/
+  ├── directory/
+  │   └── filename.filetype
+  ...
+  ```
+
+- If your code creates tabular files such as .pkl, .csv, .xlsx, ects. always include a table in the documentation with a description of the file:
+  ```
+  **Columns (filename.filetype):**
+  | Column name | Description |
+  |-------------|-------------|
+  | ...         | ...         |
+  ```
+
+- To increase usability, always map faction_id columns in any outputs to the abbreviation column of dataStage03/dataFactionsStage03/factionsAbbreviations.pkl:
+  ```
+  # load faction map:
+  faction_map = pd.read_pickle("dataStage03/dataFactionsStage03/factionsAbbreviations.pkl").drop_duplicates(subset="id").set_index("id")["abbreviation"]
+  # map factions:
+  df["faction_abbreviation"] = df["faction_id"].map(faction_map)
+  ```
+
+### **faction_id Map:**
+| faction abbreviation | faction id |
+|----------------------|------------|
+| AFD                  | 0          |
+| Grüne / Bündnis 90   | 4          |
+| DIE LINKE            | 7          |
+| CDU / CSU            | 5          |
+| FDP                  | 15         |
+| SPD                  | 25         |
+| BSW                  | 3          |
+| Fraktionslos         | 18         |
 
 
-
-### **Text classification and NLP analysis of political party based on German Parliamentary Speeches**
-See the corresponding classification notebook:
-[classification](./ML-Task-1_Classification/ML-Task-1_Classification.ipynb)
-
-
-
-### **Topic Modeling of German Parliamentary Speeches**
-See the [topic modeling notebook](./ML-Task-2_Topic-Modeling/TopicModeling_LDA_NMF.ipynb)
-The follow-up on BERTopic is also linked from there.
 

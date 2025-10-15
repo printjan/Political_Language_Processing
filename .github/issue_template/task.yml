@@ -1,0 +1,85 @@
+name: "New Task / Todo"
+description: Create a new task or todo to track on the Kanban board
+title: "[TASK] <Short title here>"
+labels: ["task"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Task Description
+        Please fill in the following fields carefully — they map to our Kanban board fields.
+        Fields with `*` are expected.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description *
+      description: What needs to be done and why?
+      placeholder: e.g. Implement endpoint for retrieving speech transcripts
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic *
+      description: Choose which project area this task belongs to
+      options:
+        - Data
+        - Backend
+        - Frontend
+        - UI
+        - Model
+        - Orga
+        - Architecture
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort (est. time)
+      description: Choose approximate difficulty / time requirement
+      options:
+        - XS (~1h)
+        - S (~3h)
+        - M (~6h)
+        - L (~10h)
+        - XL (~15h)
+
+  - type: input
+    id: startdate
+    attributes:
+      label: Start Date
+      description: When will work likely begin?
+      placeholder: "YYYY-MM-DD"
+
+  - type: input
+    id: targetdate
+    attributes:
+      label: Target Date
+      description: When should this task ideally be completed?
+      placeholder: "YYYY-MM-DD"
+
+  - type: dropdown
+    id: sprint
+    attributes:
+      label: Sprint
+      description: Assign to current or upcoming sprint
+      options:
+        - Sprint 1
+        - Sprint 2
+        - Sprint 3
+        - Sprint 4
+        - Sprint 5
+        - Later
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Initial Status
+      description: Choose where this should appear on the board
+      options:
+        - Backlog
+        - Todo
+        - In Progress
+        - In Review
+        - Done
