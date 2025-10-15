@@ -1,6 +1,6 @@
 name: "New Task / Todo"
 description: Create a new task or todo to track on the Kanban board
-title: "[TASK] <Short title here>"
+title: ""
 labels: ["task"]
 assignees: []
 
@@ -39,11 +39,11 @@ body:
       label: Effort (est. time)
       description: Choose approximate difficulty / time requirement
       options:
-        - XS (~1h)
-        - S (~3h)
-        - M (~6h)
-        - L (~10h)
-        - XL (~15h)
+        - XS 1h
+        - S 3h
+        - M 6h
+        - L 10h
+        - XL 15h
 
   - type: input
     id: startdate

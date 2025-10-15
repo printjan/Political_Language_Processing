@@ -1,5 +1,6 @@
 name: "Idea"
 description: Capture new ideas or opportunities
+title: "[idea] "
 labels: ["idea"]
 body:
   - type: textarea
@@ -8,7 +9,7 @@ body:
       description: Briefly describe the idea or opportunity
   - type: textarea
     attributes:
-      label: Potential impact
+      label: Potential impact / Motivation
   - type: textarea
     attributes:
       label: Possible next steps

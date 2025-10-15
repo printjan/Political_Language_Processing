@@ -1,0 +1,78 @@
+name: "Bug Report"
+description: Report a bug, malfunction, or unexpected behavior
+title: "[BUG] "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!  
+        Please fill out this form carefully — the more details you provide, the faster we can reproduce and fix the issue.  
+        Fields marked with `*` are expected.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Bug Summary *
+      description: Briefly summarize the problem.
+      placeholder: e.g. Search results show wrong entries for SPD speeches
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce *
+      description: List all steps necessary to reproduce the issue.
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior *
+      description: What should have happened instead?
+      placeholder: e.g. The system should display relevant SPD energy policy speeches from 2021 onward.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity *
+      description: How severe is this bug?
+      options:
+        - Minor — small issue, doesn’t affect workflow
+        - Moderate — impacts some features but has workarounds
+        - CRITICAL — major problem or system crash
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component / Area
+      description: Where does this bug occur?
+      options:
+        - Data
+        - Backend
+        - Frontend
+        - UI
+        - Model
+        - Orga
+        - Architecture
+        - Other
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / Version
+      description: Provide environment details (branch, build, OS, etc.)
+      placeholder: e.g. main branch, macOS 14.5
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Screenshots
+      description: Paste any relevant log snippets or screenshots here.
+      render: shell
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Notes
+      description: Any further details, context, or hypotheses about the bug?
