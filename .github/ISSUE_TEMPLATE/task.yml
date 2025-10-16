@@ -44,21 +44,21 @@ body:
         - L 10h
         - XL 15h
 
-  - type: input
+  - type: date
     id: startdate
     attributes:
       label: Start Date
       description: When will work likely begin?
-      placeholder: "YYYY-MM-DD"
+      placeholder: "DD-MM-YYYY"
 
-  - type: input
+  - type: date
     id: targetdate
     attributes:
       label: Target Date
       description: When should this task ideally be completed?
-      placeholder: "YYYY-MM-DD"
+      placeholder: "DD-MM-YYYY"
 
-  - type: dropdown
+  - type: iteration
     id: sprint
     attributes:
       label: Sprint
@@ -71,14 +71,3 @@ body:
         - Sprint 5
         - Later
 
-  - type: dropdown
-    id: status
-    attributes:
-      label: Initial Status
-      description: Choose where this should appear on the board
-      options:
-        - Backlog
-        - Todo
-        - In Progress
-        - In Review
-        - Done
