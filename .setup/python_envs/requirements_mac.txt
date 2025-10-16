@@ -1,0 +1,69 @@
+# ===============================
+# PoLaPro Environment
+# Compatible with macOS (Apple Silicon)
+# ===============================
+
+# --- Core Python & Data Stack ---
+python==3.10
+numpy==2.1.3
+pandas==2.3.0
+scipy==1.14.1
+matplotlib
+seaborn
+tqdm
+scikit-learn
+joblib
+requests
+lxml
+beautifulsoup4
+openpyxl
+tabulate
+jsonlines
+regex
+unidecode
+Levenshtein
+matplotlib-venn
+
+# --- Notebook & Visualization ---
+jupyter
+pygwalker
+plotly
+wordcloud
+
+# --- NLP Core Libraries ---
+nltk
+spacy
+textacy
+gensim
+textblob==0.17.1
+textblob-de
+markovify
+
+# --- Topic Modeling & Embedding ---
+umap-learn
+pyldavis
+bertopic
+
+# --- HuggingFace Ecosystem ---
+transformers
+datasets
+evaluate
+accelerate
+tokenizers
+
+# --- Machine Learning Frameworks ---
+torch
+torchvision
+tf-keras
+tensorflow-macos
+tensorflow-metal
+
+
+# --- Utilities & Tools ---
+selenium
+pymysql
+ipython==8.32.0
+
+# --- Optional (quality of life) ---
+# tqdm (already included)
+# seaborn (for plots)

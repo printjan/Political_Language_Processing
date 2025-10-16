@@ -157,6 +157,31 @@ team-16/
 ---
 
 
+## **Development Environment Setup**
+
+### **Python Environment**
+
+* All installation files for Python environments are stored in the directory: 
+```
+├── .setup/
+│   ├── python_envs/
+```
+* You can use these .yml files to create the corresponding Conda environments with Miniconda by running:
+```
+conda env create -f .setup/python_envs/<environment_file>.yml
+```
+* In the same directory, you will also find two .txt files containing requirements descriptions for pip-based installations.
+* For safety and reproducibility, it is recommended to export and back up your environment right after creation. This ensures you can easily restore a working configuration if dependencies change or updates cause conflicts.
+```
+├── .setup/
+│   ├── python_envs/
+│   │   ├── env_backups/
+```
+
+
+---
+
+
 ## **Codeguidelines**
 - Comments, documentation, and filepaths are to be written in english!
 
