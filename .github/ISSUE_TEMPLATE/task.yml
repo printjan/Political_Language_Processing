@@ -58,7 +58,7 @@ body:
       description: When should this task ideally be completed?
       placeholder: "DD-MM-YYYY"
 
-  - type: iteration
+  - type: dropdown
     id: sprint
     attributes:
       label: Sprint
