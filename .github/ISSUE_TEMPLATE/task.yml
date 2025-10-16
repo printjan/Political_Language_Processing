@@ -44,14 +44,14 @@ body:
         - L 10h
         - XL 15h
 
-  - type: date
+  - type: input
     id: startdate
     attributes:
       label: Start Date
       description: When will work likely begin?
       placeholder: "DD-MM-YYYY"
 
-  - type: date
+  - type: input
     id: targetdate
     attributes:
       label: Target Date
