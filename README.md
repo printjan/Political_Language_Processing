@@ -37,7 +37,7 @@ All data will be stored in a structured format and automatically kept up to date
 
 
 ## **Predecessor project**
-In the preceding project, we (different team) analyzed political speeches in the German Bundestag using Natural Language Processing to gain insights into the dynamics and structure of political communication. Our motivation was to reveal and critically question hidden patterns and relationships in political discourse.
+In the [preceding project](https://github.com/printjan/NLP-Projekt_Political-Language-Processing), we (different team) analyzed political speeches in the German Bundestag using Natural Language Processing to gain insights into the dynamics and structure of political communication. Our motivation was to reveal and critically question hidden patterns and relationships in political discourse.
 
 The scenario focused on a comprehensive analysis of the plenary protocols of the German Bundestag. As a hypothetical client, we considered, for example, political research institutes, media houses, or parties that are interested in detailed analyses and comprehensible visualizations of political communication.
 
