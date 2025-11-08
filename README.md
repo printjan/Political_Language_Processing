@@ -46,7 +46,7 @@ Specifically, we aimed to answer the following questions:
 * Is it possible to automatically identify the party affiliation or even the identity of a speaker based solely on the speech transcript?
 * Which main topics dominate the political discourse, and how do the parties differ in this regard?
 
-### **Data Acquisition and Preparation:**
+### **Predecessor project: Data Acquisition and Preparation**
 - Crawling all publicly available plenary transcripts of the 19th and 20th legislative periods of the German Bundestag in JSON format via the Bundestag’s official API: https://www.bundestag.de/services/opendata
 - Before crawling, verify the website’s Terms of Use and robots.txt to ensure the data retrieval is permitted
 - Note: For the 20th period, a small number of protocols are missing.
@@ -54,7 +54,7 @@ Specifically, we aimed to answer the following questions:
 - After crawling, the data was stored in a Pandas dataframe, preprocessed through several stages, and stored in Pickle (*.pkl) files. Below is a OneDrive link, containing the raw data and the preprocessing stages:
 [Onedrive Link](https://technischehochschulen-my.sharepoint.com/:f:/g/personal/dreykornju96245_technischehochschulen_onmicrosoft_com/Ej-sEGwae81FhV8L48I0PbEB2m3WW8Pu_nWlVdClo0ceBg?e=QhDzuj)
 
-### **Analysis of Speaking Time Distribution – Who Speaks How Much?**
+### **Predecessor project: Analysis of Speaking Time Distribution – Who Speaks How Much?**
 - Approach: purely statistical evaluation of speaking times using word and character counts in speeches  
 - Visualization, e.g., using boxplots, distributions, or heatmaps  
 - Idea: identify patterns and differences in speaking time between political parties  
@@ -63,7 +63,7 @@ Specifically, we aimed to answer the following questions:
 - See the corresponding notebook: [statistics](./ST-Task/statisticTask.ipynb)
 
 
-### **Automatic Detection of the Speaker’s Party Affiliation in Transcribed Speeches**
+### **Predecessor project: Automatic Detection of the Speaker’s Party Affiliation in Transcribed Speeches**
 
 - Approach: build a classification model (e.g., SVM or BERT model) to automatically classify party affiliation
 - Extra: identify speakers with the largest speaking share using an additional classification model in a pipeline structure
@@ -72,7 +72,7 @@ Specifically, we aimed to answer the following questions:
 - See the corresponding notebook: [classification](./ML-Task-1_Classification/ML-Task-1_Classification.ipynb)
 
 
-### **Investigation of the Main Topics Discussed in Bundestag Speeches**
+### **Predecessor project: Investigation of the Main Topics Discussed in Bundestag Speeches**
 
 - Approach: use topic modeling algorithms (e.g., LDA or NMF) to identify thematic clusters in the speeches  
 - Idea: party-specific comparison — compare topic clusters across parties to reveal differences in communication strategies regarding overarching topics  
@@ -86,7 +86,7 @@ Specifically, we aimed to answer the following questions:
 ### **Predecessor Project Structure Overview:**
 
 ```
-data/
+PoLaPro_data/
 ├── dataGeneration/ … # created by the Data Generation Pipeline
 │   │
 ├── dataFinalStage/ # final result of the Data Generation Pipeline
