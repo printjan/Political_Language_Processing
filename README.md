@@ -123,34 +123,7 @@ PoLaPro_data/
 │   │   ├── speech_content_19_stage04.xlsx
 │   │   ├── speech_content_20_stage04.xlsx
 │   │   └── factions_stage02.xlsx
-├── dataStatistics/…
 ├── dataClassification/…
-├── dataTopicModeling/…
-│   ├── lda
-│   ├── bertopic
-team-16/
-├── dataGeneration/
-│   ├── dataGeneratorPipeline.ipynb
-│   ├── paths.py
-│   ├── dataGenerator_Clean_Text.py
-│   ├── dataGenerator_Extract_Contributions.py
-│   ├── dataGenerator_Match_Names.py
-│   └── bundestagsapi/
-├── dataPreprocessingHelpers/
-│   ├── preprocessing_pipeline.py
-│   ├── phrase_patterns.py
-│   └── domain_stopwords.py
-├── statisticTask/
-├── ML-Task-1_Classification/
-│   ├── ML-Task-1_Classification.ipynb
-│   ├── classification_experiments.ipynb
-│   └── preprocessing_ML-Task-1.py
-├── ML-Task-2_Topic-Modeling/
-├── README.md
-├── ProjectSheet.md
-├── requirements.txt
-├── nlp_project_env_setup.yml
-└── pitch_slides.pdf
 ```
 
 
